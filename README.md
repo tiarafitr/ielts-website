@@ -47,8 +47,7 @@ DB_SCHEMA=public
 DB_SSLMODE=require
 ```
 
-Gunakan port **5432** (koneksi langsung), bukan 6543. Port 6543 adalah PgBouncer
-dan migrasi dapat menggantung di sana.
+Gunakan port **6543**.
 
 > Kredensial tidak disertakan di dalam repositori. Setiap orang yang melakukan
 > *clone* harus mengisinya sendiri, atau memakai kredensial yang dibagikan
@@ -135,7 +134,7 @@ npm run build
 | Gejala | Penyebab dan solusi |
 |---|---|
 | Halaman kosong / tanpa gaya | `npm run build` belum dijalankan, atau `public/hot` tersangkut (`rm -f public/hot`). |
-| `SQLSTATE[08006] connection refused` | Kredensial database salah, atau memakai port 6543. Gunakan 5432. |
+| `SQLSTATE[08006] connection refused` | Kredensial database salah, atau memakai port selain 6543. |
 | `Nothing to migrate` tetapi soal kosong | Database sudah bertabel tetapi belum di-*seed*. Jalankan `php artisan db:seed`. |
 | `Please provide a valid cache path` | Folder `storage/framework/views` belum dibuat (lihat Langkah 3). |
 | Laporan band bertanda *offline estimate* | `GEMINI_API_KEY` kosong atau panggilan gagal. Aplikasi tetap berfungsi; isi kunci untuk penilaian AI sungguhan. |
